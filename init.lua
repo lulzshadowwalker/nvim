@@ -1,1 +1,2 @@
-require ("lulz.options")
+require "lulz.options"
+require "lulz.keymaps"
