@@ -66,3 +66,11 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- Telescope
+local tel = require('telescope.builtin')
+vim.keymap.set('n', '<leader>fs', tel.find_files, opts)
+vim.keymap.set('n', '<leader>fg', tel.live_grep, opts)
+vim.keymap.set('n', '<leader>fb', tel.buffers, opts)
+vim.keymap.set('n', '<leader>fh', tel.help_tags, opts)
+vim.keymap.set('n', '<leader>/',  tel.current_buffer_fuzzy_find, opts)
