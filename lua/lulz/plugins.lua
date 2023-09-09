@@ -48,10 +48,8 @@ return packer.startup(function(use)
 
   use {
     'rcarriga/nvim-notify',
-    config = function()
-        vim.notify = require('notify')
-    end
   } 
+  vim.notify = require('notify')
 
   use {
     'andweeb/presence.nvim', 
