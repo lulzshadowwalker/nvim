@@ -76,5 +76,5 @@ vim.keymap.set('n', '<leader>fh', tel.help_tags, opts)
 vim.keymap.set('n', '<leader>/',  tel.current_buffer_fuzzy_find, opts)
 
 -- null-ls
-keymap('n', '<leader>fq', ':Format <CR>' , opts) -- Format Buffer *Format Qode*
+keymap('n', '<leader>fq', ':Format <CR>' , opts) -- Format Qode
 
