@@ -1,6 +1,7 @@
-require "lulz.plugins"
-require "lulz.options"
-require "lulz.keymaps"
-require "lulz.colorscheme"
-require "lulz.cmp"
-require "lulz.lsp"
+require("lulz.plugins")
+require("lulz.options")
+require("lulz.keymaps")
+require("lulz.colorscheme")
+require("lulz.cmp")
+require("lulz.lsp")
+require("lulz.treesitter")

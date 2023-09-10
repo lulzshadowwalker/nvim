@@ -48,7 +48,7 @@ return packer.startup(function(use)
 
   use {
     'rcarriga/nvim-notify',
-  } 
+  }
   vim.notify = require('notify')
 
   use {
@@ -83,14 +83,20 @@ return packer.startup(function(use)
     -- snippets
     "L3MON4D3/LuaSnip", --snippet engine
     "rafamadriz/friendly-snippets", -- a bunch of snippets to use
-    }
+  }
 
-    -- LSP
+  -- LSP
+  use {
+    "neovim/nvim-lspconfig", -- enable LSP
+    "williamboman/mason.nvim", -- simple to use language server installer
+    "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
+    'jose-elias-alvarez/null-ls.nvim', -- LSP diagnostics and code actions
+  }
+
+    -- Treesitter
     use {
-      use "neovim/nvim-lspconfig", -- enable LSP
-      use "williamboman/mason.nvim", -- simple to use language server installer
-      use "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
-      use 'jose-elias-alvarez/null-ls.nvim', -- LSP diagnostics and code actions
+      "nvim-treesitter/nvim-treesitter",
+      run = ":TSUpdate",
     }
 
   -- Automatically set up your configuration after cloning packer.nvim

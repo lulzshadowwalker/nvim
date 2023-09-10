@@ -11,9 +11,14 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-		formatting.black.with({ extra_args = { "--fast" } }),
+    --  web
+		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
+    diagnostics.eslint,
+
+    -- go  
+    formatting.goimports,
+    
+    -- lua 
 		formatting.stylua,
-    -- diagnostics.flake8
 	},
 })

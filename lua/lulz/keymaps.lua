@@ -74,3 +74,7 @@ vim.keymap.set('n', '<leader>fg', tel.live_grep, opts)
 vim.keymap.set('n', '<leader>fb', tel.buffers, opts)
 vim.keymap.set('n', '<leader>fh', tel.help_tags, opts)
 vim.keymap.set('n', '<leader>/',  tel.current_buffer_fuzzy_find, opts)
+
+-- null-ls
+keymap('n', '<leader>fq', ':Format <CR>' , opts) -- Format Buffer *Format Qode*
+
