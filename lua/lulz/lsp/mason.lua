@@ -1,10 +1,11 @@
 
 local servers = {
   "lua_ls",
-	"pyright",
+  "pyright",
   "tsserver",
   "gopls",
-	"jsonls",
+  "jsonls",
+  "phpstan",
 }
 
 local settings = {

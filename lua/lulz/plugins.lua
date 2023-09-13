@@ -101,13 +101,27 @@ return packer.startup(function(use)
 
   -- colorschemes
   use {
-    "EdenEast/nightfox.nvim"
+    "EdenEast/nightfox.nvim",
+    "nikolvs/vim-sunbather",
+    "KabbAmine/yowish.vim",
+    "larsbs/vimterial_dark",
+    { "catppuccin/nvim", as = "catppuccin" },
+    {
+      "ellisonleao/gruvbox.nvim",
+      config = function()
+        require('gruvbox').setup({
+          contrast = 'hard',
+          -- transparent = true,
+        })
+      end
+    }
   }
 
   use {
     "windwp/nvim-ts-autotag"
   }
 
+  use "windwp/nvim-autopairs"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
