@@ -5,7 +5,7 @@ local servers = {
   "tsserver",
   "gopls",
   "jsonls",
-  "phpstan",
+  "dartls",
 }
 
 local settings = {

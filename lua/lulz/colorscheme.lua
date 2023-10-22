@@ -1,4 +1,4 @@
-local colorscheme = 'gruvbox'
+local colorscheme = 'ayu'
 
 function trans_bg()
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
