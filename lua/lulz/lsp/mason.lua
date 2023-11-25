@@ -6,6 +6,11 @@ local servers = {
   "gopls",
   "jsonls",
   "dartls",
+  "phpactor",
+  "cssls",
+  "clangd",
+  "graphql",
+  "tailwindcss",
 }
 
 local settings = {

@@ -47,11 +47,6 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 
 	use({
-		"rcarriga/nvim-notify",
-	})
-	vim.notify = require("notify")
-
-	use({
 		"andweeb/presence.nvim",
 		config = function()
 			require("presence").setup({
@@ -103,9 +98,7 @@ return packer.startup(function(use)
 	-- colorschemes
 	use({
 		"EdenEast/nightfox.nvim",
-		"nikolvs/vim-sunbather",
 		"KabbAmine/yowish.vim",
-		"larsbs/vimterial_dark",
 		{ "catppuccin/nvim", as = "catppuccin" },
 		{ "Shatur/neovim-ayu" },
 		{
@@ -117,6 +110,13 @@ return packer.startup(function(use)
 				})
 			end,
 		},
+		"FrenzyExists/aquarium-vim",
+		{ "rose-pine/neovim", as = "rose-pine" },
+    'folke/tokyonight.nvim',
+    "myagko/nymph.nvim", 
+    "josephwecker/murphytango.vim",
+    "miikanissi/modus-themes.nvim", 
+    "craftzdog/solarized-osaka.nvim",
 	})
 
 	use({
@@ -127,14 +127,30 @@ return packer.startup(function(use)
 
 	use("ThePrimeagen/vim-be-good")
 
-  -- Flutter
-  use({
-    'dart-lang/dart-vim-plugin',
-    'thosakwe/vim-flutter',
-    'natebosch/vim-lsc',
-    'natebosch/vim-lsc-dart',
-  })
-  
+	-- Flutter
+	use({
+		"dart-lang/dart-vim-plugin",
+		"thosakwe/vim-flutter",
+		"natebosch/vim-lsc",
+		"natebosch/vim-lsc-dart",
+		"natebosch/dartlang-snippets",
+	})
+
+	-- Toggleterm
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+		config = function()
+			require("toggleterm").setup({
+				open_mapping = [[<c-\>]],
+				direction = "horizontal",
+			})
+		end,
+	})
+
+  -- Transparency
+  use('xiyaowong/transparent.nvim')
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
