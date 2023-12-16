@@ -1,4 +1,5 @@
 require("lulz.plugins")
+require("lulz.autopairs")
 require("lulz.options")
 require("lulz.keymaps")
 require("lulz.colorscheme")

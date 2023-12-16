@@ -123,6 +123,7 @@ return packer.startup(function(use)
     'ray-x/aurora',
     'kvrohit/rasmus.nvim',
     'kvrohit/mellow.nvim', 
+    'sainnhe/everforest', 
 	})
 
 	use({

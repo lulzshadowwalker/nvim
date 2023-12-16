@@ -91,6 +91,6 @@ function toggleExplorer()
 	if vim.api.nvim_buf_get_option(0, "filetype") == "netrw" then
 		exec("close", false)
 	else
-		exec("Vexplore 25", false)
+		exec("Lexplore 25", false)
 	end
 end

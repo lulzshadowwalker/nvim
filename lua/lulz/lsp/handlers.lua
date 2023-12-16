@@ -79,7 +79,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  vim.notify('LSP has attached successfully', 'info')
 	if client.name == "tsserver" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
