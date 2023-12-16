@@ -1,4 +1,4 @@
-local colorscheme = "tokyonight-storm"
+local colorscheme = "tokyonight"
 
 function trans_bg()
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -10,4 +10,3 @@ if not okey then
 	vim.notify("colorscheme " .. colorscheme .. " not found pepega", "error")
 	return
 end
-

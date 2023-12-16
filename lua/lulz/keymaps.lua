@@ -5,6 +5,9 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
+-- shorthand for [vim.api.nvim_exec]
+local exec = vim.api.nvim_exec
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -26,8 +29,9 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+keymap("n", "<C-[>", ":only <CR>", opts)
 
-keymap("n", "<leader>e", ":Ex <CR>", opts)
+keymap("n", "<leader>e", ":lua toggleExplorer() <CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -68,14 +72,25 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
-local tel = require('telescope.builtin')
-vim.keymap.set('n', '<leader>fs', tel.find_files, opts)
-vim.keymap.set('n', '<leader>fg', tel.live_grep, opts)
-vim.keymap.set('n', '<leader>fb', tel.buffers, opts)
-vim.keymap.set('n', '<leader>fh', tel.help_tags, opts)
-vim.keymap.set('n', '<leader>/',  tel.current_buffer_fuzzy_find, opts)
-vim.keymap.set('n', '<leader>bs',  tel.lsp_document_symbols, opts)
+local tel = require("telescope.builtin")
+vim.keymap.set("n", "<leader>fs", tel.find_files, opts)
+vim.keymap.set("n", "<leader>fg", tel.live_grep, opts)
+vim.keymap.set("n", "<leader>fb", tel.buffers, opts)
+vim.keymap.set("n", "<leader>fh", tel.help_tags, opts)
+vim.keymap.set("n", "<leader>/", tel.current_buffer_fuzzy_find, opts)
+vim.keymap.set("n", "<leader>bs", tel.lsp_document_symbols, opts)
 
 -- null-ls
-keymap('n', '<leader>fq', ':Format <CR>' , opts) -- Format Qode
+keymap("n", "<leader>fq", ":Format <CR>", opts) -- Format Qode
 
+function toggleExplorer()
+  local bufCount = #vim.fn.getbufinfo({buflisted = 1})
+  if bufCount <= 1 then return end
+  print('open buffers count: ', bufCount)
+
+	if vim.api.nvim_buf_get_option(0, "filetype") == "netrw" then
+		exec("close", false)
+	else
+		exec("Vexplore 25", false)
+	end
+end

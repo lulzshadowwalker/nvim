@@ -37,7 +37,6 @@ local options = {
   guicursor = ""
 }
 
-
 vim.opt.shortmess:append "c"
 
 for k, v in pairs(options) do

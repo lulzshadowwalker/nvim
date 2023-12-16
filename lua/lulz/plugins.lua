@@ -1,5 +1,6 @@
 local fn = vim.fn
 
+
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -117,13 +118,18 @@ return packer.startup(function(use)
     "josephwecker/murphytango.vim",
     "miikanissi/modus-themes.nvim", 
     "craftzdog/solarized-osaka.nvim",
+    'rafamadriz/neon', 
+    'rockerBOO/boo-colorscheme-nvim',
+    'ray-x/aurora',
+    'kvrohit/rasmus.nvim',
+    'kvrohit/mellow.nvim', 
 	})
 
 	use({
 		"windwp/nvim-ts-autotag",
 	})
 
-	use("windwp/nvim-autopairs")
+  use("windwp/nvim-autopairs")
 
 	use("ThePrimeagen/vim-be-good")
 
@@ -143,7 +149,7 @@ return packer.startup(function(use)
 		config = function()
 			require("toggleterm").setup({
 				open_mapping = [[<c-\>]],
-				direction = "horizontal",
+				direction = "float",
 			})
 		end,
 	})
