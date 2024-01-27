@@ -1,4 +1,5 @@
-local colorscheme = "everforest"
+-- local colorscheme = "everforest"
+local colorscheme = "gruvbox"
 
 function trans_bg()
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

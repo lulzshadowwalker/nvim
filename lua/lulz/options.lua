@@ -28,13 +28,13 @@ local options = {
   number = true,                           -- set numbered lines
   relativenumber = true,                  -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
-  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
+  signcolumn = "no",                      -- always show the sign column, otherwise it would shift the text each time
   wrap = true,                             -- display lines as one long line, or true to wrap within screen
   linebreak = true,                        -- companion to wrap, don't split words wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
-  guicursor = ""
+  guicursor = "",
 }
 
 vim.opt.shortmess:append "c"
@@ -44,5 +44,5 @@ for k, v in pairs(options) do
 end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+-- vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

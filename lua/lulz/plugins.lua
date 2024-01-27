@@ -158,6 +158,31 @@ return packer.startup(function(use)
   -- Transparency
   use('xiyaowong/transparent.nvim')
 
+  -- fml 
+  use('Eandrju/cellular-automaton.nvim')
+
+  -- harpoon2
+  use('ThePrimeagen/harpoon')
+
+  -- neotree
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    },
+    config = function()
+      require("neo-tree").setup({
+        filesystem = {
+          follow_current_file = true,
+        }
+      })
+    end
+  }
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

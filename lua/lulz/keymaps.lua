@@ -31,7 +31,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-[>", ":only <CR>", opts)
 
-keymap("n", "<leader>e", ":lua toggleExplorer() <CR>", opts)
+keymap("n", "<leader>e", ":Neotree toggle <CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -83,14 +83,6 @@ vim.keymap.set("n", "<leader>bs", tel.lsp_document_symbols, opts)
 -- null-ls
 keymap("n", "<leader>fq", ":Format <CR>", opts) -- Format Qode
 
-function toggleExplorer()
-  local bufCount = #vim.fn.getbufinfo({buflisted = 1})
-  if bufCount <= 1 then return end
-  print('open buffers count: ', bufCount)
-
-	if vim.api.nvim_buf_get_option(0, "filetype") == "netrw" then
-		exec("close", false)
-	else
-		exec("Lexplore 25", false)
-	end
-end
+-- cellular-automation
+keymap("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<cr>", opts);
+keymap("n", "<leader>fl", "<cmd>CellularAutomaton game_of_life<cr>", opts);
